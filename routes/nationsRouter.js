@@ -15,8 +15,5 @@ router.get("/all", (req, res) => {
 router.get("/:nation", urlencoded({ extended: true }), (req, res) => {
   controller.getNation(req, res);
 });
-router.get("/", (req, res) => {
-  res.send("You should try /all or /brasil to see how it works")
 
-})
 export default router;

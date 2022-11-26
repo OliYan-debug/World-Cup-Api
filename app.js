@@ -15,6 +15,10 @@ db.once("open", () => console.log("Connected to database", db.name))
 
 app.use("/", nationsRouter)
 
+app.get("/", (req, res) => {
+    res.send("You should try /all or /brasil to see how it works")
+  
+  })
 app.listen(port, ()=>{
     console.log("Server running on port ", port)
 })
