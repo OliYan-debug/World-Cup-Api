@@ -1,5 +1,6 @@
 import express from "express";
 import mongoose from "mongoose";
+import cors from "cors"
 import * as dotenv from "dotenv";
 import nationsRouter from "./routes/nationsRouter.js"
 
@@ -13,6 +14,7 @@ const db = mongoose.connection;
 db.on("error", (error) => console.log("Ops! " + error))
 db.once("open", () => console.log("Connected to database", db.name))
 
+app.use(cors())
 app.use("/", nationsRouter)
 
 app.get("/", (req, res) => {
